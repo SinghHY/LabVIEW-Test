@@ -62,6 +62,34 @@
 		<Property Name="target.server.vi.access" Type="Str">+*</Property>
 		<Property Name="target.server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="target.server.vi.propertiesEnabled" Type="Bool">true</Property>
+		<Property Name="target.WebServer.Config" Type="Str">Listen 8000
+
+NI.ServerName default
+DocumentRoot "$LVSERVER_DOCROOT"
+TypesConfig "$LVSERVER_CONFIGROOT/mime.types"
+DirectoryIndex index.htm
+WorkerLimit 10
+InactivityTimeout 60
+
+LoadModulePath "$LVSERVER_MODULEPATHS"
+LoadModule LVAuth lvauthmodule
+LoadModule LVRFP lvrfpmodule
+
+#
+# Pipeline Definition
+#
+
+SetConnector netConnector
+
+AddHandler LVAuth
+AddHandler LVRFP
+
+AddHandler fileHandler ""
+
+AddOutputFilter chunkFilter
+
+
+</Property>
 		<Property Name="target.WebServer.Enabled" Type="Bool">false</Property>
 		<Property Name="target.WebServer.LogEnabled" Type="Bool">false</Property>
 		<Property Name="target.WebServer.LogPath" Type="Path">/c/ni-rt/system/www/www.log</Property>
@@ -72,6 +100,13 @@
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="Support VIs" Type="Folder">
+			<Property Name="NI.SortType" Type="Int">3</Property>
+			<Item Name="RT Sound.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/RT Sound.vi"/>
+			<Item Name="Bundle Message.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/Bundle Message.vi"/>
+			<Item Name="Check Until Not Busy.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/Check Until Not Busy.vi"/>
+			<Item Name="LCD Write.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/LCD Write.vi"/>
+		</Item>
 		<Item Name="Chassis" Type="sbRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -1148,7 +1183,20 @@
 			</Item>
 		</Item>
 		<Item Name="RT.vi" Type="VI" URL="../RT.vi"/>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="Character LCD.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Host/Internal/LCD Class/Character LCD.lvclass"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="HD44780 Common.lvlib" Type="Library" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Common/HD44780 Common.lvlib"/>
+				<Item Name="HD44780 Host.lvlib" Type="Library" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Host/HD44780 Host.lvlib"/>
+			</Item>
+			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Queue Data.ctl" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/controls/Queue Data.ctl"/>
+			<Item Name="SoundOptions.ctl" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/controls/SoundOptions.ctl"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 </Project>
