@@ -102,9 +102,6 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="Support VIs" Type="Folder">
 			<Property Name="NI.SortType" Type="Int">3</Property>
-			<Item Name="RT Sound.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/RT Sound.vi"/>
-			<Item Name="Bundle Message.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/Bundle Message.vi"/>
-			<Item Name="Check Until Not Busy.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/Check Until Not Busy.vi"/>
 			<Item Name="LCD Write.vi" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/support/LCD Write.vi"/>
 		</Item>
 		<Item Name="Chassis" Type="sbRIO Chassis">
@@ -1187,15 +1184,9 @@ AddOutputFilter chunkFilter
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Character LCD.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Host/Internal/LCD Class/Character LCD.lvclass"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
-				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="HD44780 Common.lvlib" Type="Library" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Common/HD44780 Common.lvlib"/>
 				<Item Name="HD44780 Host.lvlib" Type="Library" URL="/&lt;vilib&gt;/EmbeddedDisplay/Hitachi HD44780/Host/HD44780 Host.lvlib"/>
 			</Item>
-			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
-			<Item Name="Queue Data.ctl" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/controls/Queue Data.ctl"/>
-			<Item Name="SoundOptions.ctl" Type="VI" URL="../../../Users/Public/Documents/National Instruments/LabVIEW RIO Evaluation Kit/Tutorials/Solutions/3- Create Real-Time Application/controls/SoundOptions.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
